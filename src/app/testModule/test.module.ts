@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TestRoutingModule } from './test.routing.module';
 import { Test2Component } from './test2/test2.component';
+import { TestService } from './test.service';
 
 @NgModule({
     declarations:[
@@ -16,7 +17,7 @@ import { Test2Component } from './test2/test2.component';
         RouterModule
     ],
     providers:[
-
+        TestService
     ]
 
 })

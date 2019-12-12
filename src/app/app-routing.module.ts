@@ -7,8 +7,8 @@ import { GuardsGuard } from './guards.guard';
 const routes: Routes = [
   {
     path : 'test',
-    // loadChildren: () => import('./testModule/test.module').then(m => m.TestModule) }
-    loadChildren:'./testModule/test.module#TestModule',
+    loadChildren: () => import('./testModule/test.module').then(m => m.TestModule),
+    // loadChildren:'./testModule/test.module#TestModule',
     data: { roles: ['user', 'rm'] },
     canActivate: [GuardsGuard]
   },

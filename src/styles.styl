@@ -1,1 +1,181 @@
 /* You can add global styles to this file, and also import other style files */
+
+.sidebar-menu
+    display block
+    position fixed
+    vertical-align top
+    width sidebar-width
+    z-index 1000
+    height 'calc(100% - %s)' % header-height
+    background white
+    overflow-y auto
+    // margin-top 35px
+    // box-shadow 0 0 10px 0 rgba(33, 33, 33, 0.2)
+    box-shadow 0px 0px 3px rgba(148,148,148,0.3)
+    transition width 0.2s ease-in-out
+    .sidebar-menu-inner
+        height calc(100% - 70px);
+        overflow-y auto
+    &.has-quick-search
+        .sidebar-menu-inner
+            height calc(100% - 120px);
+    .main-menu
+        list-style none
+        margin 0
+        padding 0
+        margin-bottom 20px
+        font-size 1.166rem
+        &.search-activate
+            li
+                ul
+                    display block
+        li
+            position relative
+            margin 0
+            a
+                border-left 5px solid transparent
+                cursor pointer
+                position relative
+                display block
+                color menu-text
+                font-size 1rem
+                &:hover
+                    background rgba(69, 74, 84, 0.08)
+                    color #525252
+                    .theme-blue &
+                        border-left-color theme-blue
+                    .theme-green &
+                        border-left-color theme-green
+                    .theme-orange &
+                        border-left-color theme-orange
+                i, svg
+                    display inline-block
+                    top 1px
+                    position relative
+                    font-size 15px
+                    margin-right 5px
+                .side_icon
+                    padding 12px 8px 12px 12px
+                    width 38px
+                    text-align center
+                    font-weight 400
+            &.menu-active
+                & > a
+                    .theme-blue &
+                        border-left-color theme-blue
+                        color theme-blue
+                    .theme-green &
+                        border-left-color theme-green
+                        color theme-green
+                    .theme-orange &
+                        border-left-color theme-orange
+                        color theme-orange
+                & > ul
+                    display block
+            ul
+                position relative
+                list-style none
+                padding 0
+                margin 0
+                display none
+                overflow hidden
+                z-index 1
+                border-top none
+                & > li
+                    border-bottom none
+                    outline none
+                    & > a
+                        background transparent
+                        padding 5px 5px 5px 30px
+                        outline none !important
+                    ul
+                        & > li > a
+                                padding-left 50px
+
+    div
+        &>.sidebar-menu-inner
+            &>.logo-env
+                &>.sidebar-collapse
+                    &>.sidebar-collapse-icon
+                        margin-top 15px
+                        margin-top 0
+                        margin-right -10px
+
+    .sidebar-collapse &
+        position absolute
+        overflow visible
+        height 100%
+        width sidebar-toggle-width
+        .sidebar-menu-inner
+            overflow visible
+            height calc(100% - 47px);
+        .main-menu
+            & > li
+                & > ul
+                    display block
+                    visibility hidden
+                    position absolute
+                    height 0
+                    top auto
+                    left sidebar-toggle-width
+                    width 250px
+                    background white
+                    box-shadow 2px 1px 4px rgba(33, 33, 33, 0.2)
+                    background-clip padding-box
+                    zoom 1
+                    opacity 0
+                    li
+                        a
+                            padding-left 5px
+                            border-left 0
+                        & > ul
+                            display block
+                            a
+                                padding-left 20px
+                & > a
+                    & > span
+                        &:not(.badge)
+                            display block
+                            position absolute
+                            top 0
+                            left 42px
+                            margin-top -1px
+                            padding 12px 10px
+                            background white
+                            width 250px
+                            box-shadow 2px -1px 4px rgba(33, 33, 33, 0.2)
+                            visibility hidden
+                            background-clip padding-box
+                            border-radius 0 3px 3px 0
+                            zoom 1
+                            opacity 0
+                &:hover
+                    &>a>span
+                        visibility visible
+                        zoom 1
+                        opacity 1
+                    &>ul
+                        height auto
+                        visibility visible
+                        zoom 1
+                        opacity 1
+
+        .main-content
+            margin-left sidebar-toggle-width
+        .user-status
+            height 47px
+            .user-avatar
+                height auto
+                width 27px
+            .user-name
+                display none
+
+.sidebar-menu-toggle
+    float left
+    width 30px
+    color white
+    margin-top 12px
+    font-size 24px
+    text-align center
+    line-height normal
+    cursor pointer

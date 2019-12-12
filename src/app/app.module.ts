@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { routing } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { SharedModule } from './common/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     routing,
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

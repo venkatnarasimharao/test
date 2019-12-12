@@ -1,0 +1,108 @@
+<div class="sidebar-menu" >
+    <div class="sidebar-menu-inner sidebar-inner-menu ps-container ps-active-y">
+      <ul id="main-menu" class="main-menu" [ngClass]="{'search-activate': searchmenu}">
+        <li [ngClass]="{'menu-active': (pageType=='login')}">
+          <a >
+            <i class="fas fa-tachometer-alt side_icon"></i>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <!-- <li 
+          [ngClass]="{'menu-active': (pageType=='ShiftManagementDashboard' || pageType=='ExcelUpload' || pageType=='linking' || pageType=='create' || pageType=='shift-attendance' || pageType=='ShiftDataUpload' || pageType=='AttendanceAllReports' || pageType=='employee-attendance' || pageType == 'daily_report' || pageType == 'over-time' || pageType=='shift-group-employees' || pageType == 'attendancePolicyEmployees' || pageType == 'absentreports' || pageType=='shift-emp-report' || pageType=='shiftdeviation-report' || pageType == 'regularization-report' || pageType == 'shiftgroup-request' || pageType == 'lateness_report' || pageType == 'over-time' || pageType == 'regularization' || pageType == 'shiftallowance-hr')}">
+          <a [routerLink]="['/attendance/ShiftManagementDashboard']">
+            <i class="fas fa-clock side_icon"></i>
+            <span class="title">Time & Attendance</span>
+          </a>
+          <ul>
+            <li
+              [ngClass]="{'menu-active': (pageType=='linking' || pageType=='create' ||pageType=='ShiftDataUpload' || pageType=='shift-group-employees')}">
+              <a [routerLink]="['/attendance/create']">
+                <i class="entypo-right-open-mini"></i>
+                <span class="title">Shift Management</span>
+              </a>
+              <ul>
+                <li [ngClass]="{'menu-active': (pageType=='create')}">
+                  <a [routerLink]="['/attendance/create']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Shift Group</span>
+                  </a>
+                </li>
+                <li [ngClass]="{'menu-active': (pageType=='linking')}">
+                  <a [routerLink]="['/attendance/linking']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Shift Adjustments</span>
+                  </a>
+                </li>
+                <li [ngClass]="{'menu-active': (pageType=='shift-group-employees')}">
+                  <a [routerLink]="['/attendance/shift-group-employees']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Shift Group Employees</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              [ngClass]="{'menu-active': (pageType == 'attendancePolicyEmployees' || pageType=='employee-attendance' || pageType == 'regularization')}">
+              <a [routerLink]="['/attendance/attendancePolicyEmployees']">
+                <i class="entypo-right-open-mini"></i>
+                <span class="title">Attendance Management</span>
+              </a>
+              <ul>
+                <li [ngClass]="{'menu-active': pageType == 'attendancePolicyEmployees' }">
+                  <a [routerLink]="['/attendance/attendancePolicyEmployees']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Employees Policy</span>
+                  </a>
+                </li>
+                <li [ngClass]="{'menu-active': pageType == 'regularization' }">
+                  <a [routerLink]="['/attendance/regularization']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Regularization</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+  
+            <li [ngClass]="{'menu-active': (pageType == 'shiftgroup-request')}">
+              <a [routerLink]="['/attendance/shiftgroup-request']">
+                <i class="entypo-right-open-mini"></i>
+                <span class="title">Approvals</span>
+              </a>
+              <ul>
+                <li [ngClass]="{'menu-active': pageType == 'shiftgroup-request' }">
+                  <a [routerLink]="['/attendance/shiftgroup-request']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Shift Group Requests</span>
+                  </a>
+                </li>
+  
+              </ul>
+            </li>
+            <li
+              [ngClass]="{'menu-active': (pageType=='shift-attendance' || pageType=='shift-emp-report' ||pageType=='shiftdeviation-report' || pageType == 'over-time' || pageType == 'absentreports' || pageType == 'AttendanceAllReports' || pageType == 'regularization-report' || pageType == 'daily_report' || pageType == 'lateness_report' || pageType == 'shiftallowance-hr')}">
+              <a [routerLink]="['/attendance/regularization-report']">
+                <i class="entypo-right-open-mini"></i>
+                <span class="title">Reports</span>
+              </a>
+              <ul>
+                <li
+                  [ngClass]="{'menu-active': (pageType=='daily_report' || pageType == 'over-time' || pageType == 'lateness_report' || pageType == 'AttendanceAllReports' || pageType == 'regularization-report' || pageType == 'absentreports')}">
+                  <a [routerLink]="['/attendance/daily_report']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Attendance</span>
+                  </a>
+                </li>
+                <li
+                  [ngClass]="{'menu-active': (pageType=='shift-emp-report' || pageType == 'shiftdeviation-report' ||  pageType == 'shiftallowance-hr')}">
+                  <a [routerLink]="['/attendance/shift-emp-report']">
+                    <i class="entypo-right-open-mini"></i>
+                    <span class="title">Shifts</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li> -->
+      </ul>
+    </div>
+  </div>
