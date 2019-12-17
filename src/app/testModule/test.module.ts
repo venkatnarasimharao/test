@@ -5,6 +5,10 @@ import { RouterModule } from '@angular/router';
 import { TestRoutingModule } from './test.routing.module';
 import { Test2Component } from './test2/test2.component';
 import { TestService } from './test.service';
+import { DataTableModule } from 'angular-6-datatable';
+import { FormsModule } from '@angular/forms';
+import { MyDatePickerModule } from 'mydatepicker';
+
 
 @NgModule({
     declarations:[
@@ -14,7 +18,11 @@ import { TestService } from './test.service';
     imports:[
         CommonModule,
         TestRoutingModule,
-        RouterModule
+        RouterModule,
+        DataTableModule,
+        FormsModule,
+        MyDatePickerModule,
+
     ],
     providers:[
         TestService

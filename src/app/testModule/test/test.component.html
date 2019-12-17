@@ -1,1 +1,73 @@
-<p>test works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <input class="form-control pull-left" placeholder="Search here" type="text" [(ngModel)]="filterQuery"
+                    autocomplete="off" name="filter">
+            </div>
+            <table class="table" [mfData]="CalendarData " #mf="mfDataTable" [mfRowsOnPage]="10" [(mfSortBy)]="sortBy"
+                [(mfSortOrder)]="sortOrder">
+                <thead>
+                    <tr>
+                        <th>
+                            <mfDefaultSorter by="training_id">S No.</mfDefaultSorter>
+                        </th>
+                        <th>
+                            <mfDefaultSorter by="training_id">Name</mfDefaultSorter>
+                        </th>
+                        <th>
+                            <mfDefaultSorter by="tri_id">Date </mfDefaultSorter>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of mf.data; let i=index">
+                        <td>
+                            {{item.id}}
+                        </td>
+                        <td>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            {{item.dt | date}}
+                        </td>
+                    </tr>
+                    <tr *ngIf="mf.data.length == 0">
+                        <td colspan="8" class="text-center">
+                            <div class="no-data">No Data Found</div>
+                        </td>
+                    </tr>
+                    <tr *ngIf="spinner == true">
+                        <td colspan="8" class="text-center">
+                            <div class="loading-data">
+                                <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+                                <span>Loading...</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot *ngIf="mf.data.length > 0">
+                    <tr>
+                        <td colspan="4">
+                            <mfBootstrapPaginator [rowsOnPageSet]="[10,25, 50]"></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name : </label>
+                    <input type="text" id="name" name="name" [(ngModel)]="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="date">Pick Date: </label>
+                    <my-date-picker id="date" name="date" [options]="myDatePickerOptions" 
+                  [(ngModel)]="date" placeholder="Select Date"></my-date-picker>
+                </div>
+                <button class="btn btn-outline-success" (click)="postCalendar()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
