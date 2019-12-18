@@ -17,10 +17,15 @@ export class TestService {
       //to get data with json    how we send
       .map((response: Response) => response.json());
   }
-  postCalendar(val:any){
+  postCalendar(val: any) {
     return this._http
-          .post(AppSettings.API.POST_CALENDAR_DATA,val,this.token())
-          .map((response:Response)=>response.json());
+      .post(AppSettings.API.POST_CALENDAR_DATA, val, this.token())
+      .map((response: Response) => response.json());
+  }
+  deleteCalendarDetails(obj: any) {
+    return this._http
+      .post(AppSettings.API.DELETE_CALENDAR_DATA, obj, this.token())
+      .map((response: Response) => response.json());
   }
   token() {
     return new RequestOptions({

@@ -13,6 +13,10 @@ const routes: Routes = [
     canActivate: [GuardsGuard]
   },
   {
+    path :'InteractionBTWcomp',
+    loadChildren: () => import ('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents)
+  },
+  {
     path:'login',
     component:LoginComponent
   },

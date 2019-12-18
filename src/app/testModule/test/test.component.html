@@ -13,23 +13,29 @@
                             <mfDefaultSorter by="training_id">S No.</mfDefaultSorter>
                         </th>
                         <th>
-                            <mfDefaultSorter by="training_id">Name</mfDefaultSorter>
+                            <mfDefaultSorter by="training_id1">Name</mfDefaultSorter>
                         </th>
                         <th>
-                            <mfDefaultSorter by="tri_id">Date </mfDefaultSorter>
+                            <mfDefaultSorter by="tri_id1">Date </mfDefaultSorter>
+                        </th>
+                        <th>
+                            <mfDefaultSorter by="tri_id">Action </mfDefaultSorter>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of mf.data; let i=index">
                         <td>
-                            {{item.id}}
+                            {{i+1}}
                         </td>
                         <td>
                             {{item.name}}
                         </td>
                         <td>
                             {{item.dt | date}}
+                        </td>
+                        <td>
+                            <a (click)="DeleteSelect(item, index)"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr *ngIf="mf.data.length == 0">
@@ -56,15 +62,15 @@
             </table>
         </div>
         <div class="col-sm-4">
-            <form>
+            <form autocomplete="off">
                 <div class="form-group">
                     <label for="name">Name : </label>
                     <input type="text" id="name" name="name" [(ngModel)]="name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="date">Pick Date: </label>
-                    <my-date-picker id="date" name="date" [options]="myDatePickerOptions" 
-                  [(ngModel)]="date" placeholder="Select Date"></my-date-picker>
+                    <my-date-picker id="date" name="date" [options]="myDatePickerOptions" [(ngModel)]="date"
+                        placeholder="Select Date"></my-date-picker>
                 </div>
                 <button class="btn btn-outline-success" (click)="postCalendar()">Submit</button>
             </form>
