@@ -8,6 +8,7 @@ import { TestService } from './test.service';
 import { DataTableModule } from 'angular-6-datatable';
 import { FormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 
 @NgModule({
@@ -22,6 +23,8 @@ import { MyDatePickerModule } from 'mydatepicker';
         DataTableModule,
         FormsModule,
         MyDatePickerModule,
+		AngularMultiSelectModule,
+
 
     ],
     providers:[
