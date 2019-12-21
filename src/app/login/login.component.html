@@ -1,2 +1,7 @@
 <p>login works!</p>
-<button class="btn btn-outline-info pl-4 pr-4" [routerLink]="['/test/test']">Test Fetch</button>
+<button class="btn btn-outline-info pl-4 pr-4" [routerLink]="['/test/test']">Test Fetch</button> 
+<button class="btn btn-outline-primary" [routerLink]="['/InteractionBTWcomp/InterComp1']">Interaction</button>
+<br><br>
+<input type="text" placeholder="Omits only numbers" [(ngModel)]="addModel.segment" (focusout)="omit_only_numbers($event.target.value)">
+<br>
+<input type="text" (keyup)="omit_only_all_numbers($event.target.value)" placeholder="Omits only numbers">

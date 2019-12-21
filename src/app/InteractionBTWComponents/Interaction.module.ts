@@ -1,35 +1,31 @@
 import { NgModule } from "@angular/core";
-import { TestComponent } from './test/test.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TestRoutingModule } from './test.routing.module';
-import { Test2Component } from './test2/test2.component';
-import { TestService } from './test.service';
 import { DataTableModule } from 'angular-6-datatable';
 import { FormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { Compo1Component } from './compo1/compo1.component';
+import { Compo2Component } from './compo2/compo2.component';
+import { InteractionRoutingModule } from './Interaction-routing';
 
 
 @NgModule({
     declarations:[
-        TestComponent,
-        Test2Component,
+        Compo1Component,
+        Compo2Component
     ],
     imports:[
         CommonModule,
-        TestRoutingModule,
         RouterModule,
         DataTableModule,
         FormsModule,
+        InteractionRoutingModule,
         MyDatePickerModule,
-		AngularMultiSelectModule,
-
 
     ],
     providers:[
-        TestService
+
     ]
 
 })
-export class TestModule {}
+export class InteractionBTWComponents {}

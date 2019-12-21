@@ -51,12 +51,14 @@ export class TestComponent implements OnInit {
   getCalendar() {
     this.testService.getCalendarDeatils().subscribe(data => {
       this.CalendarData = data.result
-      this.CalendarData.forEach((ele:any) => {
-        if(ele.name == ''){
-          ele.name = 'Akrivia Test'
-        }
-      });
       // console.log(this.CalendarData,'CalendarData');
+      if(this.CalendarData.length > 0){
+        this.CalendarData.forEach((ele:any) => {
+          if(ele.name == ''){
+            ele.name = 'Akrivia Test'
+          }
+        });
+      }
     });
   }
   postCalendar(){
@@ -67,6 +69,13 @@ export class TestComponent implements OnInit {
     this.testService.postCalendar(obj).subscribe(data =>{
       if(data.success){
         console.log("success");
+        this.getCalendar();
+      }
+    })
+  }
+  DeleteSelect(obj:any,index:any){
+    this.testService.deleteCalendarDetails(obj).subscribe(data =>{
+      if(data.success){
         this.getCalendar();
       }
     })

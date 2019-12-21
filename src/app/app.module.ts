@@ -6,6 +6,7 @@ import { routing } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from './common/shared.module';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpModule } from '@angular/http';
     routing,
     CommonModule,
     SharedModule,
+    FormsModule,
     HttpModule,
   ],
   providers: [],
