@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../common/shared.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   addModel: any = { segment: '' };
-
-  constructor() { }
+  loginForm: any = {};
+  notValid: boolean;
+  constructor(
+    private _commnService: SharedService,
+		private _route: Router,
+    ) { }
 
   ngOnInit() {
+  }
+  login() {
+    console.log(this.loginForm)
+    let obj={
+      username:this.loginForm.userName,
+      password:this.loginForm.userPass
+    }
+    this._commnService.loginService(obj).subscribe(data =>{
+      if(data.result.length > 0){
+        console.log("success")
+        this._route.navigate(['/dashboard']);
+      }else{
+        this._route.navigate(['/']);
+        this.notValid = true
+      }
+    })
   }
 
   omit_special_number(event: any) {
@@ -49,11 +71,11 @@ export class LoginComponent implements OnInit {
   omit_only_numbers(event: any) {
     // which accept both numbers and letters but not only numbers
     console.log(event, "eve")
-    try{
+    try {
       if (JSON.parse(event)) {
         this.addModel.segment = '';
       }
-    }catch (err){
+    } catch (err) {
       return
     }
   }
