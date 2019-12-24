@@ -15,11 +15,13 @@ const routes: Routes = [
   },
   {
     path :'InteractionBTWcomp',
-    loadChildren: () => import ('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents)
+    loadChildren: () => import ('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents),
+    canActivate: [GuardsGuard]
   },
   {
     path:'dashboard',
-    component:DashboardComponent
+    component:DashboardComponent,
+    canActivate: [GuardsGuard]
   },
   {
     path:'login',
