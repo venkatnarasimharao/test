@@ -18,6 +18,7 @@ import { SideMenuComponent } from './sidemenu/sidemenu.component';
     exports: [
         SideMenuComponent,
     ],
-    providers: []
+    providers: [
+    ]
 })
 export class SharedModule { }

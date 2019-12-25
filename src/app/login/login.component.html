@@ -1,7 +1,27 @@
-<p>login works!</p>
-<button class="btn btn-outline-info pl-4 pr-4" [routerLink]="['/test/test']">Test Fetch</button> 
-<button class="btn btn-outline-primary" [routerLink]="['/InteractionBTWcomp/InterComp1']">Interaction</button>
+<div class="container">
+    <form class="form-signin">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72"
+            height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="email" id="inputEmail" class="form-control mb-4" autocomplete="off" [(ngModel)]="loginForm.userName" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="pass" id="inputPassword" class="form-control" [(ngModel)]="loginForm.userPass" placeholder="Password" required>
+        <div class="checkbox mb-3 mt-2">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <div class="bg-danger p-2 mb-3" *ngIf="notValid">
+            <p class="text-white"> Login Failed</p>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+    </form>
+</div>
+
 <br><br>
-<input type="text" placeholder="Omits only numbers" [(ngModel)]="addModel.segment" (focusout)="omit_only_numbers($event.target.value)">
+<!-- <input type="text" placeholder="Omits only numbers" [(ngModel)]="addModel.segment"
+    (focusout)="omit_only_numbers($event.target.value)">
 <br>
-<input type="text" (keyup)="omit_only_all_numbers($event.target.value)" placeholder="Omits only numbers">
+<input type="text" (keyup)="omit_only_all_numbers($event.target.value)" placeholder="Omits only numbers"> -->
