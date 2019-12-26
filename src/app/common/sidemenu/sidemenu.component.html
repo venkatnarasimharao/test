@@ -1,4 +1,4 @@
-<div class="sidebar-menu" >
+<!-- <div class="sidebar-menu" >
     <div>
       <ul id="main-menu" class="main-menu" >
         <li >
@@ -7,7 +7,7 @@
             <span class="title">Dashboard</span>
           </a>
         </li>
-        <!-- <li 
+        <li 
           [ngClass]="{'menu-active': (pageType=='ShiftManagementDashboard' || pageType=='ExcelUpload' || pageType=='linking' || pageType=='create' || pageType=='shift-attendance' || pageType=='ShiftDataUpload' || pageType=='AttendanceAllReports' || pageType=='employee-attendance' || pageType == 'daily_report' || pageType == 'over-time' || pageType=='shift-group-employees' || pageType == 'attendancePolicyEmployees' || pageType == 'absentreports' || pageType=='shift-emp-report' || pageType=='shiftdeviation-report' || pageType == 'regularization-report' || pageType == 'shiftgroup-request' || pageType == 'lateness_report' || pageType == 'over-time' || pageType == 'regularization' || pageType == 'shiftallowance-hr')}">
           <a [routerLink]="['/attendance/ShiftManagementDashboard']">
             <i class="fas fa-clock side_icon"></i>
@@ -102,7 +102,53 @@
               </ul>
             </li>
           </ul>
-        </li> -->
+        </li>
       </ul>
     </div>
+  </div> -->
+
+
+<nav id="sidebar" class="img">
+  <div class="p-4">
+    <h1><a href="index.html" class="logo">My App <span>Sample App</span></a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li class="active">
+        <a [routerLink]="['/dashboard']"><span class="fa fa-home mr-3"></span> Home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/test/test']"><span class="fa fa-user mr-3"></span> About</a>
+      </li>
+      <li>
+        <a href="#"><span class="fa fa-plane mr-3"></span> Destination</a>
+      </li>
+      <li>
+        <a href="#"><span class="fa fa-sticky-note mr-3"></span> Blog</a>
+      </li>
+      <li>
+        <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+      </li>
+      <li>
+        <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+      </li>
+    </ul>
+
+    <div class="mb-5">
+      <h3 class="h6 mb-3">Subscribe Here</h3>
+      <form class="subscribe-form">
+        <div class="form-group d-flex">
+          <div class="icon"><span class="icon-paper-plane"></span></div>
+          <input type="text" class="form-control" placeholder="Enter Email Address">
+        </div>
+      </form>
+    </div>
+
+    <div class="footer">
+      <p>
+        Copyright &copy;
+        {{year}} All rights reserved | This template is made with <i
+          class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Narasimha.com</a>
+      </p>
+    </div>
+
   </div>
+</nav>
