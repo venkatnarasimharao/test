@@ -17,7 +17,7 @@ export class GuardsGuard implements CanActivate {
       this.token = sessionStorage.getItem('token');
       // if (this.JwtHelper.isTokenExpired(this.token)) {
       // this.toastr.errorToastr('Your session expired, please login again.');
-      this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+      // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
       // }
       const role = sessionStorage.getItem('role');
       if (route.data['roles'].includes(role)) {

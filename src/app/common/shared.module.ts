@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SideMenuComponent } from './sidemenu/sidemenu.component';
+import { TopMenuComponent } from './topmenu/topmenu.component';
 @NgModule({
     declarations: [
         SideMenuComponent,
+        TopMenuComponent
     ],
     imports: [
         CommonModule, 
@@ -17,6 +19,7 @@ import { SideMenuComponent } from './sidemenu/sidemenu.component';
     ],
     exports: [
         SideMenuComponent,
+        TopMenuComponent
     ],
     providers: [
     ]

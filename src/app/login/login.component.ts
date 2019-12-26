@@ -26,6 +26,9 @@ export class LoginComponent implements OnInit {
     }
     this._commnService.loginService(obj).subscribe(data =>{
       if(data.result.length > 0){
+        console.log(data.result[0].userId,"data")
+        sessionStorage.setItem('token','abc');
+        sessionStorage.setItem('role',data.result[0].userId)
         console.log("success")
         this._route.navigate(['/dashboard']);
       }else{
