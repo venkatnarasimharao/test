@@ -11,7 +11,9 @@ export class Test2Component implements OnInit {
   phase: any = [];
   selectedItems: any[];
   addModel: any;
+  employees:any= [];
   dropdownSettings: { singleSelection: boolean; text: string; selectAllText: string; unSelectAllText: string; enableSearchFilter: boolean; classes: string; badgeShowLimit: number; enableCheckAll: boolean; };
+  segments: any;
 
   constructor() { }
 
@@ -68,6 +70,30 @@ export class Test2Component implements OnInit {
       //   updated_at: '2019-01-11 03:51:41'
       // }
     ]
+    this.employees =[
+      {
+        "emp_id":123,
+        "emp_name":"nar"
+      },
+      {
+        "emp_id":124,
+        "emp_name":"nar1"
+      },
+      {
+        "emp_id":123,
+        "emp_name":"nar"
+      },
+    ]
+    this.segments =[
+      {
+        name:'sa',
+        status:1
+      },
+      {
+        name:'ka',
+        status :0 
+      },
+    ]
   }
 
 
@@ -112,4 +138,22 @@ export class Test2Component implements OnInit {
     });
   }
 
+  //  task  for inactive status keeping down
+  inactiveElem(){
+    //for inactive down
+    this.segments.sort(function (a: any, b: any) {
+      return a.status - b.status;
+    });
+    this.segments.reverse()
+
+  }
+
+  
+
+  //task of unique elemets in array 
+  UniqueElements(){
+    this.employees = _.uniq(this.employees, (item1: any) => {
+      return item1.emp_id;
+    });
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../common/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,15 @@ export class LoginComponent implements OnInit {
   addModel: any = { segment: '' };
   loginForm: any = {};
   notValid: boolean;
+  year:any;
+  name: any;
   constructor(
     private _commnService: SharedService,
 		private _route: Router,
     ) { }
 
   ngOnInit() {
+    this.year = moment(new Date()).format('YYYY')
   }
   login() {
     console.log(this.loginForm)
@@ -93,4 +97,15 @@ export class LoginComponent implements OnInit {
       return
     }
   }
+  // preventing only spaces 
+  // it allows characters and number 
+  // it allows space after character or number
+  keysCheck(event: any, value: string) {
+    //restrict spaces
+    //omit spaces
+    if (value === 'addgoal' && !this.name) {
+      event.preventDefault();
+    }
+  }
+
 }

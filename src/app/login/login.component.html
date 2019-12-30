@@ -16,7 +16,7 @@
             <p class="text-white"> Login Failed</p>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+        <p class="mt-5 mb-3 text-muted">&copy; {{year}}</p>
     </form>
 </div>
 
@@ -25,3 +25,7 @@
     (focusout)="omit_only_numbers($event.target.value)">
 <br>
 <input type="text" (keyup)="omit_only_all_numbers($event.target.value)" placeholder="Omits only numbers"> -->
+
+
+<!-- <input type="text" class="form-control" autocomplete="off" (keydown.space)="keysCheck($event,'addgoal')"
+                  placeholder="{{ _sharedService.translation('Enter Name') }}" formControlName="name" required> -->
