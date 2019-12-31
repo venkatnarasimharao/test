@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'underscore';
+import * as moment from 'moment';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class Test2Component implements OnInit {
   phase: any = [];
   selectedItems: any[];
   addModel: any;
-  employees:any= [];
+  employees: any = [];
   dropdownSettings: { singleSelection: boolean; text: string; selectAllText: string; unSelectAllText: string; enableSearchFilter: boolean; classes: string; badgeShowLimit: number; enableCheckAll: boolean; };
   segments: any;
 
@@ -70,28 +71,28 @@ export class Test2Component implements OnInit {
       //   updated_at: '2019-01-11 03:51:41'
       // }
     ]
-    this.employees =[
+    this.employees = [
       {
-        "emp_id":123,
-        "emp_name":"nar"
+        "emp_id": 123,
+        "emp_name": "nar"
       },
       {
-        "emp_id":124,
-        "emp_name":"nar1"
+        "emp_id": 124,
+        "emp_name": "nar1"
       },
       {
-        "emp_id":123,
-        "emp_name":"nar"
+        "emp_id": 123,
+        "emp_name": "nar"
       },
     ]
-    this.segments =[
+    this.segments = [
       {
-        name:'sa',
-        status:1
+        name: 'sa',
+        status: 1
       },
       {
-        name:'ka',
-        status :0 
+        name: 'ka',
+        status: 0
       },
     ]
   }
@@ -100,8 +101,8 @@ export class Test2Component implements OnInit {
 
   // on select of one element deselct of other elemets
   onItemSelect(event: any) {
-    console.log(event,"event");
-    console.log(this.selectedItems,"this.selectedItems")
+    console.log(event, "event");
+    console.log(this.selectedItems, "this.selectedItems")
     this.selectedItems.forEach((ele: any) => {
       if (ele.id === 2 || ele.id === 4) {
         this.selectedItems.forEach((item: any, i: any) => {
@@ -139,7 +140,7 @@ export class Test2Component implements OnInit {
   }
 
   //  task  for inactive status keeping down
-  inactiveElem(){
+  inactiveElem() {
     //for inactive down
     this.segments.sort(function (a: any, b: any) {
       return a.status - b.status;
@@ -148,10 +149,19 @@ export class Test2Component implements OnInit {
 
   }
 
-  
+  // add and subtract or previous day and next day of current date
+  preNxtDays() {
+    let currentDate1 = moment(new Date())
+      .subtract(1, 'days')
+      .format('YYYY-MM-DD')
+    let currentDateNxt = moment(new Date())
+      .add(1, 'days')
+      .format('YYYY-MM-DD')
+  }
+
 
   //task of unique elemets in array 
-  UniqueElements(){
+  UniqueElements() {
     this.employees = _.uniq(this.employees, (item1: any) => {
       return item1.emp_id;
     });
