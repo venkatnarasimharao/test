@@ -36,6 +36,8 @@ export class TestComponent implements OnInit {
     componentDisabled: false,
     showClearDateBtn: true,
     openSelectorOnInputClick: true,
+    // disable after the dates
+    // disableSince
     disableUntil: {
       year: new Date().getFullYear(),
       month: new Date().getMonth() + 1,

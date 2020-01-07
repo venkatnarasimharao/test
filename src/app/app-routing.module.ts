@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path :'InteractionBTWcomp',
     loadChildren: () => import ('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents),
-    canActivate: [GuardsGuard]
+    // canActivate: [GuardsGuard]
   },
   {
     path:'dashboard',

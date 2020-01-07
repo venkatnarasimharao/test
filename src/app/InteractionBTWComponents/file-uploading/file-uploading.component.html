@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-sm-4">
+        <form [formGroup]="uploadForm" novalidate>
+            <div class="" formArrayName="formArray"
+                *ngFor="let language of uploadForm['controls'].formArray['controls']; let i=index">
+                <div class="row margin-top-10 ml-2" [formGroupName]="i">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <input #myInput type="file" class="file-input-custom form-control" formControlName="file"
+                                id="file" (change)="selectFile($event,'formArray')">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <a class="btn btn-white tool-tip" (click)="removeformArray(i)"
+                                *ngIf="uploadForm['controls'].formArray['controls'].length >1">
+                                <i class="fas fa-trash-alt"></i>
+                                <span class="tooltip-inner-text">Delete</span>
+                            </a>
+                            <a class="btn btn-white tool-tip" (click)='addformArray()'>
+                                <i class="fas fa-plus"></i>
+                                <span class="tooltip-inner-text">Add</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
