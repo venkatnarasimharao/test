@@ -98,15 +98,15 @@ export class FileUploadingComponent implements OnInit {
         documentPath: this.intermediateArr[i]
       };
       console.log(finalDocArray, 'sssssssss');
-      this.trainingManagementService.submitTriDocuments(finalDocArray).subscribe((data: any) => {
-        data = this._encDec.decrypt(data.edc);
-        if (data.success) {
-          this.toaster.successToastr('Upload content successfully');
-          $('#uploaddoc').modal('hide');
-        } else {
-          this.toaster.errorToastr('Something went wrong');
-        }
-      });
+      // this.trainingManagementService.submitTriDocuments(finalDocArray).subscribe((data: any) => {
+      //   data = this._encDec.decrypt(data.edc);
+      //   if (data.success) {
+      //     this.toaster.successToastr('Upload content successfully');
+      //     $('#uploaddoc').modal('hide');
+      //   } else {
+      //     this.toaster.errorToastr('Something went wrong');
+      //   }
+      // });
     }
   }
 }
