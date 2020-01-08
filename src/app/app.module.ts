@@ -8,12 +8,14 @@ import { SharedModule } from './common/shared.module';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToastrModule } from 'ng6-toastr-notifications';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SharedModule,
     FormsModule,
     HttpModule,
+    ToastrModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

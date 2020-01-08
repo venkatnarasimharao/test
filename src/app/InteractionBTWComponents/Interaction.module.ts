@@ -8,13 +8,15 @@ import { Compo1Component } from './compo1/compo1.component';
 import { Compo2Component } from './compo2/compo2.component';
 import { InteractionRoutingModule } from './Interaction-routing';
 import { FileUploadingComponent } from './file-uploading/file-uploading.component';
+import { ToastrModule } from 'ng6-toastr-notifications';
 
 
 @NgModule({
     declarations:[
         Compo1Component,
         Compo2Component,
-        FileUploadingComponent
+        FileUploadingComponent,
+        
     ],
     imports:[
         CommonModule,
@@ -24,7 +26,7 @@ import { FileUploadingComponent } from './file-uploading/file-uploading.componen
         ReactiveFormsModule,
         InteractionRoutingModule,
         MyDatePickerModule,
-
+        ToastrModule,
     ],
     providers:[
 
