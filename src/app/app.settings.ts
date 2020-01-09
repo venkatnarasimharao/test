@@ -6,6 +6,7 @@ export class AppSettings {
         USER_LOGIN:environment.apiUrl+'/userlogin',
         GET_CALENDAR_DETAILS:environment.apiUrl + '/fetch',
         POST_CALENDAR_DATA:environment.apiUrl+'/postCalendarData',
-        DELETE_CALENDAR_DATA:environment.apiUrl+'/deleteCalendar'
+        DELETE_CALENDAR_DATA:environment.apiUrl+'/deleteCalendar',
+        USER_DOCS:environment.apiUrl+'/uploaddoc'
     }
 }

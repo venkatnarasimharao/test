@@ -9,6 +9,7 @@ import { Compo2Component } from './compo2/compo2.component';
 import { InteractionRoutingModule } from './Interaction-routing';
 import { FileUploadingComponent } from './file-uploading/file-uploading.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import { InterService } from './inter.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
         ToastrModule,
     ],
     providers:[
-
+        InterService
     ]
 
 })

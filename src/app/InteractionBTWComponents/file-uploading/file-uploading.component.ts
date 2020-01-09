@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ToastrManager } from 'ng6-toastr-notifications';
+import { InterService } from '../inter.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class FileUploadingComponent implements OnInit {
   intermediateDetails: any;
   intermediateArr: any = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,public inserService:InterService) { }
 
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
@@ -98,15 +99,15 @@ export class FileUploadingComponent implements OnInit {
         documentPath: this.intermediateArr[i]
       };
       console.log(finalDocArray, 'sssssssss');
-      // this.trainingManagementService.submitTriDocuments(finalDocArray).subscribe((data: any) => {
-      //   data = this._encDec.decrypt(data.edc);
-      //   if (data.success) {
-      //     this.toaster.successToastr('Upload content successfully');
-      //     $('#uploaddoc').modal('hide');
-      //   } else {
-      //     this.toaster.errorToastr('Something went wrong');
-      //   }
-      // });
+      this.inserService.submitDocuments(finalDocArray).subscribe((data: any) => {
+        // data = this._encDec.decrypt(data.edc);
+        if (data.success) {
+          // this.toaster.successToastr('Upload content successfully');
+          // $('#uploaddoc').modal('hide');
+        } else {
+          // this.toaster.errorToastr('Something went wrong');
+        }
+      });
     }
   }
 }
