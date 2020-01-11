@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'underscore';
 import * as moment from 'moment';
+import { Location } from '@angular/common';
+import { FormGroup, FormBuilder, FormControlName, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -15,8 +17,8 @@ export class Test2Component implements OnInit {
   employees: any = [];
   dropdownSettings: { singleSelection: boolean; text: string; selectAllText: string; unSelectAllText: string; enableSearchFilter: boolean; classes: string; badgeShowLimit: number; enableCheckAll: boolean; };
   segments: any;
-
-  constructor() { }
+  public formName: FormGroup;
+  constructor(private _location: Location) { }
 
   ngOnInit() {
     this.dropdownSettings = {
@@ -166,4 +168,24 @@ export class Test2Component implements OnInit {
       return item1.emp_id;
     });
   }
+
+  // go back to visited page in anuglar 
+  backClicked() {
+    this._location.back();
+  }
+
+  // removing an element or omit a element from an obje 
+  omit_element() {
+    // to omit a ke value from an object
+    _.omit(this.employees, 'obj_key')
+  }
+
+  // dynamic edit opertaion for model driven forms
+  modelDriven_forms_edit(item: any) {
+    // to show feils in model driven forms in easy way
+    this.formName.patchValue({
+      firstname: item.firstname
+    });
+  }
+
 }
