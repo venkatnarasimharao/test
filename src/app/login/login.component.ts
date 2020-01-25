@@ -12,34 +12,37 @@ export class LoginComponent implements OnInit {
   addModel: any = { segment: '' };
   loginForm: any = {};
   notValid: boolean;
-  year:any;
+  year: any;
   name: any;
   constructor(
+    // tslint:disable-next-line: variable-name
     private _commnService: SharedService,
-		private _route: Router,
-    ) { }
+    // tslint:disable-next-line: variable-name
+    private _route: Router,
+  ) { }
 
   ngOnInit() {
     this.year = moment(new Date()).format('YYYY')
   }
   login() {
     console.log(this.loginForm)
-    let obj={
-      username:this.loginForm.userName,
-      password:this.loginForm.userPass
+    const obj = {
+      username: this.loginForm.userName,
+      password: this.loginForm.userPass
     }
-    this._commnService.loginService(obj).subscribe(data =>{
-      if(data.result.length > 0){
-        console.log(data.result[0].userId,"data")
-        sessionStorage.setItem('token','abc');
-        sessionStorage.setItem('role',data.result[0].userId)
-        console.log("success")
+    this._commnService.loginService(obj).subscribe(data => {
+      console.log('data', data);
+      if (data.result.length > 0) {
+        console.log(data.result[0].userId, 'data');
+        sessionStorage.setItem('token', 'abc');
+        sessionStorage.setItem('role', data.result[0].role);
+        console.log('success');
         this._route.navigate(['/dashboard']);
-      }else{
+      } else {
         this._route.navigate(['/']);
-        this.notValid = true
+        this.notValid = true;
       }
-    })
+    });
   }
 
   omit_special_number(event: any) {

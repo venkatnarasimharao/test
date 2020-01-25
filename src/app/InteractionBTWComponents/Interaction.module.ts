@@ -10,6 +10,7 @@ import { InteractionRoutingModule } from './Interaction-routing';
 import { FileUploadingComponent } from './file-uploading/file-uploading.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { InterService } from './inter.service';
+import { SharedModule } from '../common/shared.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { InterService } from './inter.service';
         InteractionRoutingModule,
         MyDatePickerModule,
         ToastrModule,
+        SharedModule
     ],
     providers:[
         InterService

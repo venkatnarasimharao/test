@@ -9,6 +9,7 @@ import { DataTableModule } from 'angular-6-datatable';
 import { FormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { SharedModule } from '../common/shared.module';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
         FormsModule,
         MyDatePickerModule,
 		AngularMultiSelectModule,
-
+        SharedModule
 
     ],
     providers:[

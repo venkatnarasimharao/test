@@ -12,7 +12,7 @@ export class GuardsGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log("roleeeeeeee",route.data)
+    console.log('roleeeeeeee', route.data)
     if (sessionStorage.getItem('token')) {
       this.token = sessionStorage.getItem('token');
       // if (this.JwtHelper.isTokenExpired(this.token)) {
@@ -20,7 +20,7 @@ export class GuardsGuard implements CanActivate {
       // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
       // }
       const role = sessionStorage.getItem('role');
-      if (route.data['roles'].includes(role)) {
+      if (route.data.roles.includes(role)) {
         return true;
       } else {
         this.router.navigate(['/dashboard']);
