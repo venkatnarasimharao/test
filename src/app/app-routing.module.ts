@@ -7,26 +7,26 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path : 'test',
+    path: 'test',
     loadChildren: () => import('./testModule/test.module').then(m => m.TestModule),
     // loadChildren:'./testModule/test.module#TestModule',
     data: { roles: ['user', 'rm'] },
     canActivate: [GuardsGuard]
   },
   {
-    path :'InteractionBTWcomp',
-    loadChildren: () => import ('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents),
+    path: 'InteractionBTWcomp',
+    loadChildren: () => import('./InteractionBTWComponents/Interaction.module').then(n => n.InteractionBTWComponents),
     // canActivate: [GuardsGuard]
   },
   {
-    path:'dashboard',
-    component:DashboardComponent,
-    data: { roles: ['MASTER', 'user','admin'] },
-    canActivate: [GuardsGuard]
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { roles: ['MASTER', 'user', 'admin'] },
+    // canActivate: [GuardsGuard]
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }

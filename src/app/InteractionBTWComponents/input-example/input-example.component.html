@@ -1,0 +1,10 @@
+<div>
+    <p>input-example Parent works!</p>
+    <h3>Parent Component is here</h3>
+    <br>
+    <div *ngIf="childLoad === 'parentload'">
+        <button (click)="childLoad = 'load'">Click to load child</button>
+    </div>
+</div>
+
+<app-input-example-child [dataForChild]="SampleData" *ngIf="childLoad === 'load'"></app-input-example-child>
