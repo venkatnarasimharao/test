@@ -188,4 +188,15 @@ export class Test2Component implements OnInit {
     });
   }
 
+  // taking length of an array and making values like [1,2,3,4]
+  arrayLenght() {
+    let segmentlist = [];
+    let segementLimit = [];
+    segementLimit = _.map((Array.from(Array(segmentlist.length).keys())), (num: any) => num = num + 1);
+
+    // filter
+    segmentlist = _.filter(segmentlist, (o: any) => {
+      return o.status === 1;
+    });
+  }
 }
