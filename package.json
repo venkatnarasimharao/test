@@ -30,6 +30,7 @@
     "moment": "^2.24.0",
     "mydatepicker": "^2.6.8",
     "ng6-toastr-notifications": "^1.0.4",
+    "ngx-socket-io": "^3.0.1",
     "popper.js": "^1.16.0",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",

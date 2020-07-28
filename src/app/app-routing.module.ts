@@ -19,6 +19,13 @@ const routes: Routes = [
     canActivate: [GuardsGuard]
   },
   {
+    path: 'socket',
+    loadChildren: () => import('./socket/socket.module').then(m => m.SocketModule),
+    // loadChildren: './socket/socket.module#SocketModule',
+    data: { roles: ['user', 'rm'] },
+    // canActivate: [GuardsGuard]
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent,
     data: { roles: ['MASTER', 'user', 'admin'] },

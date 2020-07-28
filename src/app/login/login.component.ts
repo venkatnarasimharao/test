@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       console.log('data', data);
       if (data.result.length > 0) {
         console.log(data.result[0].userId, 'data');
-        sessionStorage.setItem('token', 'abc');
+        sessionStorage.setItem('token', data.token);
         sessionStorage.setItem('role', data.result[0].role);
         console.log('success');
         this._route.navigate(['/dashboard']);

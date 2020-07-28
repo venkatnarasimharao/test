@@ -9,6 +9,11 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ToastrModule } from 'ng6-toastr-notifications';
+// socket 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = { url : environment.apiUrl, options: {}};
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     FormsModule,
     HttpModule,
     ToastrModule,
+    SocketIoModule.forRoot(config),
   ],
   providers: [],
   bootstrap: [AppComponent]
